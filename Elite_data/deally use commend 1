@@ -28,3 +28,30 @@ ONBOARD1 = 10.192.219.6
 
 dbadmin@PRISSER4PDB01:/oracle/app/oracle/diag/crs/prisser4pdb01/crs/trace$ === 1.6GB
 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#!/bin/bash
+cd /Aadhar_Logs/Aadhar_logs_38 sleep 3;
+find . -type f -mtime -1 | xargs tar -cvzf /PAPPBKP/Aadhar_logs_BKP/Aadhar_38/$(hostname).$(date +%Y-%m-%d).tar.gz
+sleep 5;
+find . -type f -mtime -1 | xargs tar -cvzf /logs/Aadhar_logs/Aadhar_logs38/$(hostname).$(date +%Y-%m-%d).tar.gz
+
+
+find . -type f | xargs tar -cvzf /PAPPBKP/Aadhar_logs_BKP/Aadhar_38/$(hostname).$(date +%Y-%m-%d).tar.gz
+find . -type f | xargs tar -cvzf /logs/Aadhar_logs/Aadhar_logs38/$(hostname).$(date +%Y-%m-%d).tar.gz
+
+
+=============================================================================================================================
+#!/bin/bash
+cd /Aadhar_Logs/Aadhar_logs_39 sleep 3;
+find . -type f -mtime -1 | xargs tar -cvzf /PAPPBKP/Aadhar_logs_BKP/Aadhar_39/$(hostname).$(date +%Y-%m-%d).tar.gz
+sleep 5;
+find . -type f -mtime -1 | xargs tar -cvzf /logs/Aadhar_logs/Aadhar_logs39/$(hostname).$(date +%Y-%m-%d).tar.gz
+
+find . -type f | xargs tar -cvzf /PAPPBKP/Aadhar_logs_BKP/Aadhar_39/$(hostname).$(date +%Y-%m-%d).tar.gz
+find . -type f | xargs tar -cvzf /logs/Aadhar_logs/Aadhar_logs39/$(hostname).$(date +%Y-%m-%d).tar.gz
+
+
+
+
