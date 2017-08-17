@@ -1,10 +1,11 @@
 find . -name '*' -mtime +7 -exec rm -f {} \;
-
+=========================================================================================================================================
 mysql -u root -p ecaf < 09_08_2017_dbdump.sql
+mysql -u root -p ecaf < 17_08_2017_dbdump.sql
 
-
+==========================================================================================================================================
 SELECT to_char(startup_time,'DD-MON-YYYY HH24:MI:SS') "DB Startup Time" FROM sys.v_$instance;
-
+===========================================================================================================================================
 RMAN Command
 
 backup:- 
@@ -14,7 +15,7 @@ backup path = +ARC/UNISERVE/BACKUPSET/2017_08_10/
 controlfile backup:-
 backup current controlfile format '/export/home/dbadmin/2017-08-10_Uniserve.ctl';
 
-
+==========================================================================================================================================
 
 select username, account_status, EXPIRY_DATE from dba_users where username='ONBOARD';
 
@@ -38,8 +39,8 @@ sleep 5;
 find . -type f -mtime -1 | xargs tar -cvzf /logs/Aadhar_logs/Aadhar_logs38/$(hostname).$(date +%Y-%m-%d).tar.gz
 
 
-find . -type f | xargs tar -cvzf /PAPPBKP/Aadhar_logs_BKP/Aadhar_38/$(hostname).$(date +%Y-%m-%d).tar.gz
-find . -type f | xargs tar -cvzf /logs/Aadhar_logs/Aadhar_logs38/$(hostname).$(date +%Y-%m-%d).tar.gz
+find . -type f | xargs tar -cvzf /PAPPBKP/Aadhar_logs_BKP/Aadhar_38/$(hostname).$(date +%Y-%m-%d).Fullbkp.tar.gz
+find . -type f | xargs tar -cvzf /logs/Aadhar_logs/Aadhar_logs38/$(hostname).$(date +%Y-%m-%d).Fullbkp.tar.gz
 
 
 =============================================================================================================================
@@ -49,8 +50,8 @@ find . -type f -mtime -1 | xargs tar -cvzf /PAPPBKP/Aadhar_logs_BKP/Aadhar_39/$(
 sleep 5;
 find . -type f -mtime -1 | xargs tar -cvzf /logs/Aadhar_logs/Aadhar_logs39/$(hostname).$(date +%Y-%m-%d).tar.gz
 
-find . -type f | xargs tar -cvzf /PAPPBKP/Aadhar_logs_BKP/Aadhar_39/$(hostname).$(date +%Y-%m-%d).tar.gz
-find . -type f | xargs tar -cvzf /logs/Aadhar_logs/Aadhar_logs39/$(hostname).$(date +%Y-%m-%d).tar.gz
+find . -type f | xargs tar -cvzf /PAPPBKP/Aadhar_logs_BKP/Aadhar_39/$(hostname).$(date +%Y-%m-%d).Fullbkp.tar.gz
+find . -type f | xargs tar -cvzf /logs/Aadhar_logs/Aadhar_logs39/$(hostname).$(date +%Y-%m-%d).Fullbkp.tar.gz
 
 
 
